@@ -1,48 +1,56 @@
-# Setup
-title: Solchan Blog
-url: https://solchan87.github.io/
-paginate: 1
-baseurl: ""
-permalink: pretty
+title: "Derek’s Digital Garden" 
+author: Derek Kedziora
+email: "hello@derekkedziora.com"
+description: "Derek Kedziora’s digital garden"
+github: derekkedziora
+highlighter: rouge
+markdown: kramdown
+parse_block_html: false
+url: https://derekkedziora.com
+permalink: blog/:title
+show_drafts: true
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
 
-# Gems
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      blogpost: true
+      layout: post
+    
+  -    
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page    
+
+  -    
+    scope:
+      path: ""
+      type: "no-index"
+    values:
+      layout: page
+      no-index: true
+
+collections:
+  pages:
+    output: true
+  no-index:
+    output: true
+
 plugins:
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-seo-tag
+  - jekyll-feed
 
-# Optimize Jekyll
-exclude:
-  - .editorconfig
-  - .git
-  - .jekyll-cache
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE.md
-  - README.md
-
-sass:
-  sass_dir: _sass
-  style: :compressed
-
-# Options
-
-# Replace this value and uncomment to enable Google Analytics tracking
-# ga_analytics: UA-000000-0
-
-# Specify the author for blog posts
-author:
-  name: Solchan Ahn
-  url: https://github.com/solchan87
-  email: perudot@gmail.com
-
-# Custom vars
-version: 3.0.0
-
-# Navbar page list
-nav:
-  - title: Blog
-    url: /archive
-
-  - title: About
-    url: /about
+feed: 
+  categories: 
+    - english-guide
+    - essays 
+    - now
+    - stream 
