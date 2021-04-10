@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  {%- include head-matter.html -%}
+</head>
+
+<body>
+{%- include site-nav.html -%}
+<main>
+
+<header>
+	<h1 class="home-title">{{ page.title }}</h1>
+</header>
+
+{{ content }}
+
+<h2>Latest Posts</h2>
+
+{%- assign i = 0 -%}
+
+{%- for post in site.posts -%}
+	{%- unless post.categories contains "unlisted" -%}
+		{%- assign i = i | plus: 1 -%}
+		{%- include blog-listing.html -%}
+	{% endunless %}
+	
+	{%- if i == 5 -%}
+		{%- break -%}
+	{%- endif -%}
+
+{% endfor %}
+
+<p><a href="/blog/all" class="internal-link">All posts →</a></p>
+
+</main>
+
+{%- include footer.html -%}
+
+</body>
+
+</html>
