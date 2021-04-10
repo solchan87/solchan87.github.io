@@ -1,6 +1,7 @@
-# Swift 계산기 만들기 실습
-> 2018.01.12 업데이트
-
+---
+layout: post
+title: Swift 계산기 만들기 실습
+---
 ## 실습 내용
 <img src="img/180112_calc.png" width="30%">   
 
